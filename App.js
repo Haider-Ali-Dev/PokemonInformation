@@ -41,8 +41,6 @@ export default function App() {
     <View style={styles.container}>
       <Image style={styles.image} source={require('./poki.png')}/>
       <SafeAreaView>
-        <TextInput style={styles.input} placeholder={"Enter a Pokemon Name or ID"} value={inputPokimon} onChangeText={setPokimonInput}></TextInput>
-        {pokemon ?<Pokemon pokemon={pokemon} location={location} item={item}/>: <Text style={styles.stats}>No Stats</Text>}
         <View style={styles.buttonFlex}>
           <TouchableOpacity style={styles.button} onPress={onPokimonPress}>
             <Text style={styles.white}>Generate Stats</Text>
@@ -51,6 +49,8 @@ export default function App() {
             <Text style={styles.white}>Clear</Text>
           </TouchableOpacity>
         </View>
+        <TextInput style={styles.input} placeholder={"Enter a Pokemon Name or ID"} value={inputPokimon} onChangeText={setPokimonInput}></TextInput>
+        {pokemon ?<Pokemon pokemon={pokemon} location={location} item={item}/>: <Text style={styles.stats}>No Stats</Text>}
       </SafeAreaView>
 
     </View>
