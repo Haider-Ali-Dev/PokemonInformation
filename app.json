@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "pokimonapp",
-    "slug": "pokimonapp",
+    "name": "PokemonInformation",
+    "slug": "PokemonInformation",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -17,13 +17,15 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "io.expo.client"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.haider_ali_dev.pokimonapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
