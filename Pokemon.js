@@ -1,9 +1,11 @@
-import { StyleSheet, Text, View, TextInput, SafeAreaView, Button, Image, } from 'react-native';
+import { StyleSheet, Text, View, TextInput, SafeAreaView, Button, Image, ScrollView} from 'react-native';
 import React from 'react'
 
 const Pokemon = ({ pokemon, location, item }) => {
     return (
         <View style={styles.container}>
+            <ScrollView>
+            <Image style={styles.image} source={{uri: pokemon.sprites.front_shiny}}/>
             <Text style={styles.main}>Information</Text>
             <Text style={styles.text}>Name: {pokemon.name.toUpperCase()}</Text>
             <Text style={styles.text}>ID: {pokemon.id}</Text>
@@ -28,23 +30,27 @@ const Pokemon = ({ pokemon, location, item }) => {
             <Text style={styles.text}>Fling Power: {item ? item.fling_power : <Text>None</Text>}</Text>
             <Text style={styles.text}>Item Cost: {item ? item.cost : null}</Text>
             <Text style={styles.text}>Effect: {item ? item.effect_entries[0].effect : null}</Text>
+            </ScrollView>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
+
     container: {
         width: 300,
         margin:10,
         borderRadius: 10,
         borderWidth: 2,
         borderColor: "#ffff00",
-        padding: 20,
+        padding: 30,
         backgroundColor: "#ADD8E6",
+        height: 500
     },
     image: {
-        width: 100,
-        height: 100
+        width: 200,
+        height: 100,
+        marginLeft: 20
     },
     text:{
         fontSize: 17,
